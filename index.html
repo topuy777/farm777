@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jual Ayam Laga - Ayam Berkualitas Tinggi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffcc00; /* Kuning cerah */
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+            background-color: #e1f7d5; /* Hijau lembut */
+        }
+        .product-description {
+            font-size: 18px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .upload-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .upload-section input[type="file"] {
+            margin-bottom: 10px;
+        }
+        .btn-submit {
+            background-color: #4CAF50; /* Hijau tua */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+        .social-media {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .social-media a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: white;
+            font-size: 24px;
+            padding: 12px;
+            border-radius: 50%;
+            background-color: #555;
+            transition: background-color 0.3s;
+        }
+        .social-media a:hover {
+            background-color: #ffcc00;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ayam Laga Berkualitas - Untuk Para Pecinta Ayam Laga</h1>
+</header>
+
+<div class="content">
+    <section class="product-description">
+        <h2>Deskripsi Produk</h2>
+        <p>Ayam laga kami dipelihara dengan penuh perhatian dan kasih sayang. Kami hanya menjual ayam laga dengan kualitas terbaik untuk para pecinta ayam laga sejati. Dapatkan ayam laga yang siap bertarung dengan stamina tinggi dan kekuatan luar biasa!</p>
+    </section>
+
+    <section class="upload-section">
+        <h3>Unggah Foto Ayam Laga Anda</h3>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <label for="file-upload">Pilih foto ayam laga yang ingin dijual:</label><br>
+            <input type="file" id="file-upload" name="image" accept="image/*" required><br><br>
+            <button type="submit" class="btn-submit">Unggah Foto</button>
+        </form>
+    </section>
+
+    <section class="social-media">
+        <h2>Ikuti Kami di Media Sosial</h2>
+        <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/yourpage" target="_blank">Instagram</a>
+        <a href="https://wa.me/yourphone" target="_blank">WhatsApp</a>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Ayam Laga - Semua Hak Cipta Dilindungi</p>
+</footer>
+
+</body>
+</html>
