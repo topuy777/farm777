@@ -3,48 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>REMBO777 Ayam Laga</title>
+  <title>REMBO777</title>
 
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background: #111;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: auto;
-      font-family: Arial, sans-serif;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
     }
 
-    .gambar-rembo {
-      width: 1448px;
-      height: 1086px;
-      min-width: 1448px;
-      max-width: 1448px;
-      min-height: 1086px;
-      max-height: 1086px;
-      object-fit: cover;
-      display: block;
-      border-radius: 15px;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-
-      /* agar gambar tidak bisa diseleksi/ditarik */
-      user-select: none;
-      pointer-events: none;
+    body {
+      background-image: url("rembo.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   </style>
 </head>
 
 <body>
-
-  <img 
-    src="./rembo.jpg" 
-    alt="REMBO777 Ayam Laga" 
-    class="gambar-rembo"
-    draggable="false"
-  >
-
 </body>
 </html>
