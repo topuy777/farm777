@@ -109,6 +109,12 @@
       background: #ffffff;
       display: block;
       padding: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .produk-card img:hover {
+      transform: scale(1.03);
     }
 
     .produk-info {
@@ -219,6 +225,66 @@
       margin-top: 35px;
     }
 
+    /* MODAL GAMBAR BESAR */
+    .modal-gambar {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.88);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-gambar.aktif {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 95%;
+      max-height: 95%;
+      background: #fff;
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.25);
+    }
+
+    .modal-content img {
+      width: auto;
+      height: auto;
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .btn-tutup {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: #e53935;
+      color: white;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 38px;
+      text-align: center;
+    }
+
+    .btn-tutup:hover {
+      background: #b71c1c;
+    }
+
     @media (max-width: 1100px) {
       .produk-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -270,6 +336,15 @@
       .btn-cancel-item {
         width: 100%;
       }
+
+      .modal-content {
+        padding: 10px;
+      }
+
+      .modal-content img {
+        max-width: 92vw;
+        max-height: 80vh;
+      }
     }
   </style>
 </head>
@@ -300,10 +375,10 @@
 
       <!-- PRODUK 1 -->
       <div class="produk-card">
-        <img src="produk1.jpg" alt="Produk 1">
+        <img src="produk1.jpg" alt="Produk 1" onclick="bukaGambar(this.src)">
         <div class="produk-info">
           <h3>Ayam Laga</h3>
-          <p class="harga">Rp 500.000</p>
+          <p class="harga">Rp 50.000</p>
           <button class="btn-beli" onclick="tambahKeranjang('Ayam Laga', 50000)">
             Beli
           </button>
@@ -312,10 +387,10 @@
 
       <!-- PRODUK 2 -->
       <div class="produk-card">
-        <img src="produk2.jpg" alt="Produk 2">
+        <img src="produk2.jpg" alt="Produk 2" onclick="bukaGambar(this.src)">
         <div class="produk-info">
           <h3>Nama Produk 2</h3>
-          <p class="harga">Rp 750.000</p>
+          <p class="harga">Rp 75.000</p>
           <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 2', 75000)">
             Beli
           </button>
@@ -324,10 +399,10 @@
 
       <!-- PRODUK 3 -->
       <div class="produk-card">
-        <img src="produk3.jpg" alt="Produk 3">
+        <img src="produk3.jpg" alt="Produk 3" onclick="bukaGambar(this.src)">
         <div class="produk-info">
           <h3>Nama Produk 3</h3>
-          <p class="harga">Rp 1.000.000</p>
+          <p class="harga">Rp 100.000</p>
           <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 3', 100000)">
             Beli
           </button>
@@ -336,10 +411,10 @@
 
       <!-- PRODUK 4 -->
       <div class="produk-card">
-        <img src="produk4.jpg" alt="Produk 4">
+        <img src="produk4.jpg" alt="Produk 4" onclick="bukaGambar(this.src)">
         <div class="produk-info">
           <h3>Nama Produk 4</h3>
-          <p class="harga">Rp 1.200.000</p>
+          <p class="harga">Rp 120.000</p>
           <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 4', 120000)">
             Beli
           </button>
@@ -348,10 +423,10 @@
 
       <!-- PRODUK 5 -->
       <div class="produk-card">
-        <img src="produk5.jpg" alt="Produk 5">
+        <img src="produk5.jpg" alt="Produk 5" onclick="bukaGambar(this.src)">
         <div class="produk-info">
           <h3>Nama Produk 5</h3>
-          <p class="harga">Rp 1.500.000</p>
+          <p class="harga">Rp 150.000</p>
           <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 5', 150000)">
             Beli
           </button>
@@ -360,10 +435,10 @@
 
       <!-- PRODUK 6 -->
       <div class="produk-card">
-        <img src="produk6.jpg" alt="Produk 6">
+        <img src="produk6.jpg" alt="Produk 6" onclick="bukaGambar(this.src)">
         <div class="produk-info">
           <h3>Nama Produk 6</h3>
-          <p class="harga">Rp 1.800.000</p>
+          <p class="harga">Rp 180.000</p>
           <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 6', 180000)">
             Beli
           </button>
@@ -372,10 +447,10 @@
 
       <!-- PRODUK 7 -->
       <div class="produk-card">
-        <img src="produk7.jpg" alt="Produk 7">
+        <img src="produk7.jpg" alt="Produk 7" onclick="bukaGambar(this.src)">
         <div class="produk-info">
           <h3>Nama Produk 7</h3>
-          <p class="harga">Rp 2.000.000</p>
+          <p class="harga">Rp 200.000</p>
           <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 7', 200000)">
             Beli
           </button>
@@ -401,9 +476,17 @@
   </div>
 
   <footer id="kontak">
-    <p>Hubungi Kami: +6285959130054</p>
+    <p>Hubungi Kami: 0812-3456-7890</p>
     <p>&copy; 2026 Toko Online Saya</p>
   </footer>
+
+  <!-- POPUP GAMBAR BESAR -->
+  <div class="modal-gambar" id="modalGambar" onclick="tutupGambarArea(event)">
+    <div class="modal-content">
+      <button class="btn-tutup" onclick="tutupGambar()">×</button>
+      <img id="gambarBesar" src="" alt="Gambar Produk Besar">
+    </div>
+  </div>
 
   <script>
     let keranjang = [];
@@ -466,9 +549,42 @@
 
       pesan += "\nTotal: " + formatRupiah(total);
 
-      btnCheckout.href = "https://wa.me/6285959130054?text=" + encodeURIComponent(pesan);
+      /*
+        GANTI NOMOR WHATSAPP DI BAWAH INI.
+        Contoh:
+        Nomor 081234567890 menjadi 6281234567890.
+      */
+      btnCheckout.href = "https://wa.me/6281234567890?text=" + encodeURIComponent(pesan);
       btnCheckout.classList.remove("disabled");
     }
+
+    function bukaGambar(src) {
+      const modal = document.getElementById("modalGambar");
+      const gambarBesar = document.getElementById("gambarBesar");
+
+      gambarBesar.src = src;
+      modal.classList.add("aktif");
+    }
+
+    function tutupGambar() {
+      const modal = document.getElementById("modalGambar");
+      const gambarBesar = document.getElementById("gambarBesar");
+
+      modal.classList.remove("aktif");
+      gambarBesar.src = "";
+    }
+
+    function tutupGambarArea(event) {
+      if (event.target.id === "modalGambar") {
+        tutupGambar();
+      }
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        tutupGambar();
+      }
+    });
   </script>
 
 </body>
