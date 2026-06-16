@@ -88,6 +88,7 @@
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 15px;
+      align-items: stretch;
     }
 
     .produk-card {
@@ -96,35 +97,52 @@
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.12);
       transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .produk-card:hover {
       transform: translateY(-5px);
     }
 
-    .produk-card img {
+    /* KOTAK GAMBAR SAMA RATA */
+    .gambar-produk {
       width: 100%;
       height: 260px;
-      object-fit: contain;
       background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .gambar-produk img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       display: block;
-      padding: 8px;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    .produk-card img:hover {
-      transform: scale(1.03);
+    .gambar-produk img:hover {
+      transform: scale(1.04);
     }
 
     .produk-info {
       padding: 12px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .produk-info h3 {
       font-size: 15px;
       margin-bottom: 8px;
+      min-height: 36px;
     }
 
     .harga {
@@ -143,6 +161,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
+      margin-top: auto;
     }
 
     .btn-beli:hover {
@@ -225,7 +244,7 @@
       margin-top: 35px;
     }
 
-    /* MODAL GAMBAR BESAR */
+    /* POPUP GAMBAR BESAR */
     .modal-gambar {
       display: none;
       position: fixed;
@@ -290,8 +309,8 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
-      .produk-card img {
-        height: 250px;
+      .gambar-produk {
+        height: 240px;
       }
     }
 
@@ -300,8 +319,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .produk-card img {
-        height: 260px;
+      .gambar-produk {
+        height: 250px;
       }
 
       .banner h2 {
@@ -319,7 +338,7 @@
         grid-template-columns: repeat(1, 1fr);
       }
 
-      .produk-card img {
+      .gambar-produk {
         height: 420px;
       }
 
@@ -375,85 +394,85 @@
 
       <!-- PRODUK 1 -->
       <div class="produk-card">
-        <img src="produk1.jpg" alt="Produk 1" onclick="bukaGambar(this.src)">
+        <div class="gambar-produk">
+          <img src="produk1.jpg" alt="Produk 1" onclick="bukaGambar(this.src)">
+        </div>
         <div class="produk-info">
           <h3>Ayam Laga</h3>
           <p class="harga">Rp 50.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Ayam Laga', 50000)">
-            Beli
-          </button>
+          <button class="btn-beli" onclick="tambahKeranjang('Ayam Laga', 50000)">Beli</button>
         </div>
       </div>
 
       <!-- PRODUK 2 -->
       <div class="produk-card">
-        <img src="produk2.jpg" alt="Produk 2" onclick="bukaGambar(this.src)">
+        <div class="gambar-produk">
+          <img src="produk2.jpg" alt="Produk 2" onclick="bukaGambar(this.src)">
+        </div>
         <div class="produk-info">
           <h3>Nama Produk 2</h3>
           <p class="harga">Rp 75.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 2', 75000)">
-            Beli
-          </button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 2', 75000)">Beli</button>
         </div>
       </div>
 
       <!-- PRODUK 3 -->
       <div class="produk-card">
-        <img src="produk3.jpg" alt="Produk 3" onclick="bukaGambar(this.src)">
+        <div class="gambar-produk">
+          <img src="produk3.jpg" alt="Produk 3" onclick="bukaGambar(this.src)">
+        </div>
         <div class="produk-info">
           <h3>Nama Produk 3</h3>
           <p class="harga">Rp 100.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 3', 100000)">
-            Beli
-          </button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 3', 100000)">Beli</button>
         </div>
       </div>
 
       <!-- PRODUK 4 -->
       <div class="produk-card">
-        <img src="produk4.jpg" alt="Produk 4" onclick="bukaGambar(this.src)">
+        <div class="gambar-produk">
+          <img src="produk4.jpg" alt="Produk 4" onclick="bukaGambar(this.src)">
+        </div>
         <div class="produk-info">
           <h3>Nama Produk 4</h3>
           <p class="harga">Rp 120.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 4', 120000)">
-            Beli
-          </button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 4', 120000)">Beli</button>
         </div>
       </div>
 
       <!-- PRODUK 5 -->
       <div class="produk-card">
-        <img src="produk5.jpg" alt="Produk 5" onclick="bukaGambar(this.src)">
+        <div class="gambar-produk">
+          <img src="produk5.jpg" alt="Produk 5" onclick="bukaGambar(this.src)">
+        </div>
         <div class="produk-info">
           <h3>Nama Produk 5</h3>
           <p class="harga">Rp 150.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 5', 150000)">
-            Beli
-          </button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 5', 150000)">Beli</button>
         </div>
       </div>
 
       <!-- PRODUK 6 -->
       <div class="produk-card">
-        <img src="produk6.jpg" alt="Produk 6" onclick="bukaGambar(this.src)">
+        <div class="gambar-produk">
+          <img src="produk6.jpg" alt="Produk 6" onclick="bukaGambar(this.src)">
+        </div>
         <div class="produk-info">
           <h3>Nama Produk 6</h3>
           <p class="harga">Rp 180.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 6', 180000)">
-            Beli
-          </button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 6', 180000)">Beli</button>
         </div>
       </div>
 
       <!-- PRODUK 7 -->
       <div class="produk-card">
-        <img src="produk7.jpg" alt="Produk 7" onclick="bukaGambar(this.src)">
+        <div class="gambar-produk">
+          <img src="produk7.jpg" alt="Produk 7" onclick="bukaGambar(this.src)">
+        </div>
         <div class="produk-info">
           <h3>Nama Produk 7</h3>
           <p class="harga">Rp 200.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 7', 200000)">
-            Beli
-          </button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 7', 200000)">Beli</button>
         </div>
       </div>
 
@@ -549,11 +568,6 @@
 
       pesan += "\nTotal: " + formatRupiah(total);
 
-      /*
-        GANTI NOMOR WHATSAPP DI BAWAH INI.
-        Contoh:
-        Nomor 081234567890 menjadi 6281234567890.
-      */
       btnCheckout.href = "https://wa.me/6281234567890?text=" + encodeURIComponent(pesan);
       btnCheckout.classList.remove("disabled");
     }
