@@ -104,10 +104,11 @@
 
     .produk-card img {
       width: 100%;
-      height: 130px;
-      object-fit: cover;
-      background: #ddd;
+      height: 260px;
+      object-fit: contain;
+      background: #ffffff;
       display: block;
+      padding: 8px;
     }
 
     .produk-info {
@@ -222,11 +223,19 @@
       .produk-grid {
         grid-template-columns: repeat(4, 1fr);
       }
+
+      .produk-card img {
+        height: 250px;
+      }
     }
 
     @media (max-width: 768px) {
       .produk-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .produk-card img {
+        height: 260px;
       }
 
       .banner h2 {
@@ -245,7 +254,7 @@
       }
 
       .produk-card img {
-        height: 200px;
+        height: 420px;
       }
 
       .checkout {
@@ -293,9 +302,9 @@
       <div class="produk-card">
         <img src="produk1.jpg" alt="Produk 1">
         <div class="produk-info">
-          <h3>Nama Produk 1</h3>
+          <h3>Ayam Laga</h3>
           <p class="harga">Rp 50.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 1', 50000)">
+          <button class="btn-beli" onclick="tambahKeranjang('Ayam Laga', 50000)">
             Beli
           </button>
         </div>
@@ -457,11 +466,6 @@
 
       pesan += "\nTotal: " + formatRupiah(total);
 
-      /*
-        GANTI NOMOR WHATSAPP DI BAWAH INI.
-        Contoh:
-        Nomor 081234567890 menjadi 6281234567890.
-      */
       btnCheckout.href = "https://wa.me/6281234567890?text=" + encodeURIComponent(pesan);
       btnCheckout.classList.remove("disabled");
     }
