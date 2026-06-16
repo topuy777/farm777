@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TOKO FARM REMBO777</title>
+  <title>Toko Online Saya</title>
 
   <style>
     * {
@@ -107,6 +107,7 @@
       height: 130px;
       object-fit: cover;
       background: #ddd;
+      display: block;
     }
 
     .produk-info {
@@ -203,6 +204,12 @@
       background: #1ebe5d;
     }
 
+    .checkout.disabled {
+      background: #888;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
     footer {
       background: #111;
       color: white;
@@ -282,66 +289,87 @@
 
     <div class="produk-grid">
 
+      <!-- PRODUK 1 -->
       <div class="produk-card">
         <img src="produk1.jpg" alt="Produk 1">
         <div class="produk-info">
-          <h3>Produk 1</h3>
+          <h3>Nama Produk 1</h3>
           <p class="harga">Rp 50.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Produk 1', 50000)">Beli</button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 1', 50000)">
+            Beli
+          </button>
         </div>
       </div>
 
+      <!-- PRODUK 2 -->
       <div class="produk-card">
         <img src="produk2.jpg" alt="Produk 2">
         <div class="produk-info">
-          <h3>Produk 2</h3>
+          <h3>Nama Produk 2</h3>
           <p class="harga">Rp 75.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Produk 2', 75000)">Beli</button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 2', 75000)">
+            Beli
+          </button>
         </div>
       </div>
 
+      <!-- PRODUK 3 -->
       <div class="produk-card">
         <img src="produk3.jpg" alt="Produk 3">
         <div class="produk-info">
-          <h3>Produk 3</h3>
+          <h3>Nama Produk 3</h3>
           <p class="harga">Rp 100.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Produk 3', 100000)">Beli</button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 3', 100000)">
+            Beli
+          </button>
         </div>
       </div>
 
+      <!-- PRODUK 4 -->
       <div class="produk-card">
         <img src="produk4.jpg" alt="Produk 4">
         <div class="produk-info">
-          <h3>Produk 4</h3>
+          <h3>Nama Produk 4</h3>
           <p class="harga">Rp 120.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Produk 4', 120000)">Beli</button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 4', 120000)">
+            Beli
+          </button>
         </div>
       </div>
 
+      <!-- PRODUK 5 -->
       <div class="produk-card">
         <img src="produk5.jpg" alt="Produk 5">
         <div class="produk-info">
-          <h3>Produk 5</h3>
+          <h3>Nama Produk 5</h3>
           <p class="harga">Rp 150.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Produk 5', 150000)">Beli</button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 5', 150000)">
+            Beli
+          </button>
         </div>
       </div>
 
+      <!-- PRODUK 6 -->
       <div class="produk-card">
         <img src="produk6.jpg" alt="Produk 6">
         <div class="produk-info">
-          <h3>Produk 6</h3>
+          <h3>Nama Produk 6</h3>
           <p class="harga">Rp 180.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Produk 6', 180000)">Beli</button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 6', 180000)">
+            Beli
+          </button>
         </div>
       </div>
 
+      <!-- PRODUK 7 -->
       <div class="produk-card">
         <img src="produk7.jpg" alt="Produk 7">
         <div class="produk-info">
-          <h3>Produk 7</h3>
+          <h3>Nama Produk 7</h3>
           <p class="harga">Rp 200.000</p>
-          <button class="btn-beli" onclick="tambahKeranjang('Produk 7', 200000)">Beli</button>
+          <button class="btn-beli" onclick="tambahKeranjang('Nama Produk 7', 200000)">
+            Beli
+          </button>
         </div>
       </div>
 
@@ -357,7 +385,7 @@
       <h3>Total: <span id="totalHarga">Rp 0</span></h3>
       <br>
 
-      <a id="btnCheckout" class="checkout" href="#" target="_blank">
+      <a id="btnCheckout" class="checkout disabled" href="javascript:void(0)" target="_blank">
         Checkout via WhatsApp
       </a>
     </div>
@@ -365,7 +393,7 @@
 
   <footer id="kontak">
     <p>Hubungi Kami: 0812-3456-7890</p>
-    <p>&copy; 2026 TOKO FARM REMBO777</p>
+    <p>&copy; 2026 Toko Online Saya</p>
   </footer>
 
   <script>
@@ -401,7 +429,8 @@
       if (keranjang.length === 0) {
         listKeranjang.innerHTML = "<li>Belum ada produk dipilih.</li>";
         totalHarga.textContent = "Rp 0";
-        btnCheckout.href = "#";
+        btnCheckout.href = "javascript:void(0)";
+        btnCheckout.classList.add("disabled");
         return;
       }
 
@@ -420,21 +449,21 @@
 
       totalHarga.textContent = formatRupiah(total);
 
-      let pesan = "Halo, saya ingin membeli:%0A";
+      let pesan = "Halo, saya ingin membeli:\n\n";
 
       keranjang.forEach(function(item) {
-        pesan += "- " + item.nama + " - " + formatRupiah(item.harga) + "%0A";
+        pesan += "- " + item.nama + " - " + formatRupiah(item.harga) + "\n";
       });
 
-      pesan += "%0ATotal: " + formatRupiah(total);
+      pesan += "\nTotal: " + formatRupiah(total);
 
       /*
-        GANTI NOMOR WHATSAPP DI BAWAH INI
+        GANTI NOMOR WHATSAPP DI BAWAH INI.
         Contoh:
-        6281234567890
-        Jangan pakai angka 0 di depan.
+        Nomor 081234567890 menjadi 6281234567890.
       */
-      btnCheckout.href = "https://wa.me/6281234567890?text=" + pesan;
+      btnCheckout.href = "https://wa.me/6281234567890?text=" + encodeURIComponent(pesan);
+      btnCheckout.classList.remove("disabled");
     }
   </script>
 
