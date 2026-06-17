@@ -106,7 +106,6 @@
       transform: translateY(-5px);
     }
 
-    /* KOTAK GAMBAR SAMA RATA */
     .gambar-produk {
       width: 100%;
       height: 260px;
@@ -265,22 +264,26 @@
 
     .modal-content {
       position: relative;
-      max-width: 95%;
-      max-height: 95%;
+      width: 700px;
+      height: 700px;
+      max-width: 92vw;
+      max-height: 88vh;
       background: #fff;
       border-radius: 14px;
       padding: 15px;
       box-shadow: 0 0 25px rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .modal-content img {
-      width: auto;
-      height: auto;
-      max-width: 90vw;
-      max-height: 85vh;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
       display: block;
       border-radius: 10px;
+      background: #fff;
     }
 
     .btn-tutup {
@@ -331,6 +334,18 @@
         display: inline-block;
         margin: 6px;
       }
+
+      .modal-content {
+        width: 92vw;
+        height: 80vh;
+        padding: 10px;
+      }
+
+      .modal-content img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
 
     @media (max-width: 480px) {
@@ -357,12 +372,9 @@
       }
 
       .modal-content {
+        width: 92vw;
+        height: 75vh;
         padding: 10px;
-      }
-
-      .modal-content img {
-        max-width: 92vw;
-        max-height: 80vh;
       }
     }
   </style>
@@ -392,7 +404,6 @@
 
     <div class="produk-grid">
 
-      <!-- PRODUK 1 -->
       <div class="produk-card">
         <div class="gambar-produk">
           <img src="produk1.jpg" alt="Produk 1" onclick="bukaGambar(this.src)">
@@ -404,7 +415,6 @@
         </div>
       </div>
 
-      <!-- PRODUK 2 -->
       <div class="produk-card">
         <div class="gambar-produk">
           <img src="produk2.jpg" alt="Produk 2" onclick="bukaGambar(this.src)">
@@ -416,7 +426,6 @@
         </div>
       </div>
 
-      <!-- PRODUK 3 -->
       <div class="produk-card">
         <div class="gambar-produk">
           <img src="produk3.jpg" alt="Produk 3" onclick="bukaGambar(this.src)">
@@ -428,7 +437,6 @@
         </div>
       </div>
 
-      <!-- PRODUK 4 -->
       <div class="produk-card">
         <div class="gambar-produk">
           <img src="produk4.jpg" alt="Produk 4" onclick="bukaGambar(this.src)">
@@ -440,7 +448,6 @@
         </div>
       </div>
 
-      <!-- PRODUK 5 -->
       <div class="produk-card">
         <div class="gambar-produk">
           <img src="produk5.jpg" alt="Produk 5" onclick="bukaGambar(this.src)">
@@ -452,7 +459,6 @@
         </div>
       </div>
 
-      <!-- PRODUK 6 -->
       <div class="produk-card">
         <div class="gambar-produk">
           <img src="produk6.jpg" alt="Produk 6" onclick="bukaGambar(this.src)">
@@ -464,7 +470,6 @@
         </div>
       </div>
 
-      <!-- PRODUK 7 -->
       <div class="produk-card">
         <div class="gambar-produk">
           <img src="produk7.jpg" alt="Produk 7" onclick="bukaGambar(this.src)">
@@ -499,7 +504,6 @@
     <p>&copy; 2026 Toko Online Saya</p>
   </footer>
 
-  <!-- POPUP GAMBAR BESAR -->
   <div class="modal-gambar" id="modalGambar" onclick="tutupGambarArea(event)">
     <div class="modal-content">
       <button class="btn-tutup" onclick="tutupGambar()">×</button>
